@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+     <extension point="org.eclipse.ui.editors">
+      <editor name="amf test"
+              extensions="amf"
+              icon="amf.gif"
+              default="true"
+              class="amf.gui.AutomatonEditor"
+              contributorClass="amf.gui.ShapesEditorActionBarContributor"
+              id="amf test">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <category name="amf test"
+                parentCategory="org.eclipse.ui.Examples"
+                id="amf test"/>
+      <wizard name="amf test diagram"
+              icon="amf.gif"
+              category="automata modeling framework"
+              class="amf.gui.ShapesCreationWizard"
+              id="org.eclipse.gef.examples.shapes.ShapesCreationWizard">
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            category="amf.category1"
+            class="amf.tikz.ExportTikzWizard"
+            id="amf.tikzWizard"
+            name="export to TIKZ">
+      </wizard>
+      <category
+            id="amf.category1"
+            name="amf">
+      </category>
+   </extension>
+</plugin>
